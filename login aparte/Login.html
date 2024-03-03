@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login de pagina de ropa</title>
+    <link rel="stylesheet" href="estilos/loginestilo.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container-form register">
+        <div class="information">
+            <div class="info-childs">
+                <h2>Bienvenido</h2>
+                <p>Gracias por unirte a nuestra tienda</p>
+                <button type="button" id="Sing-in">Iniciar sesion</button>
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <?php
+                    session_start();
+                    if (isset($_SESSION['error'])) {
+                        echo '<p style="color: red;">' . htmlspecialchars($_SESSION['error']) . '</p>';
+                        unset($_SESSION['error']);
+                    }
+                ?>
+                <h2>Crear una cuenta</h2>
+                <p>Usa tu email para registrarte</p>
+                <form class="form" method="post" action="../php/register.php">
+                    <label>
+                        <i class='bx bx-user' ></i>
+                        <input type="text" placeholder="Nombre completo" id="usuario" name="usuario" required>
+                    </label>
+                    <label>
+                        <i class='bx bx-envelope'></i>
+                        <input type="email" placeholder="Correo electronico" id="correo" name="correo" required>
+                    </label>
+                    <label>
+                        <i class='bx bxs-lock' ></i>
+                        <input type="password" placeholder="Contraseña" id="clave" name="clave" required>
+                    </label>
+                    <input type="submit" value="Registrarse">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container-form login hide">
+        <div class="information">
+            <div class="info-childs">
+                <h2>Bienvenido nuevamente</h2>
+                <p>Gracias por querer unirte a nuestra familia KB shop esperamos que te registres con exito</p>
+                <button type="button" id="Sing-up">Registrarse</button>
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <?php
+                    session_start();
+                    if (isset($_SESSION['error'])) {
+                        echo '<p style="color: red;">' . htmlspecialchars($_SESSION['error']) . '</p>';
+                        unset($_SESSION['error']);
+                    }
+                ?>
+                <h2>Iniciar sesion</h2>
+                <p>O iniciar sesion con una cuenta</p>
+                <form class="form" method="post" action="../php/login.php">
+                    <label>
+                        <i class='bx bx-envelope'></i>
+                        <input type="email" placeholder="Correo electronico" id="correo" name="correo" required>
+                    </label>
+                    <label>
+                        <i class
