@@ -55,16 +55,9 @@
         </div>
         <div class="form-information">
             <div class="form-information-childs">
-                <?php
-                    session_start();
-                    if (isset($_SESSION['error'])) {
-                        echo '<p style="color: red;">' . htmlspecialchars($_SESSION['error']) . '</p>';
-                        unset($_SESSION['error']);
-                    }
-                ?>
                 <h2>Iniciar sesion</h2>
                 <p>O iniciar sesion con una cuenta</p>
-                <form class="form" method="post" action="../php/login.php">
+                <form class="form">
                     <label>
                         <i class='bx bx-envelope'></i>
                         <input type="email" placeholder="Correo electronico" id="correo" name="correo" required>
