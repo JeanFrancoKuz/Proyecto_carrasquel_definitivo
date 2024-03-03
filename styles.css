@@ -12,9 +12,20 @@
   width: 150px;
   height: 150px;
   border-radius: 20px;
-  box-shadow: #333;
+  box-shadow: hsl(0, 0%, 20%);
+}
+.login-button{
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: #fff;
+  width: 400px;
+  z-index: 1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px ;
 }
 
+}
 body {
   margin: 0px auto;
   max-width: 1200px;
